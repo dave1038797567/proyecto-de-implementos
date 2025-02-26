@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>solicitud de prestamos de implementos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
+    <style>
+
+    .carousel-control-prev-icon,
+    .carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M5.5 0l-4 4 4 4V0z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='black' viewBox='0 0 8 8'%3E%3Cpath d='M2.5 0l4 4-4 4V0z'/%3E%3C/svg%3E");
+}
+
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            text-align: center;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background: white;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .header img {
+            height: 80px; 
+            width: auto;
+        }
+        
+        .center {
+            display: flex;
+            align-items: center;
+        }
+        .center h1 {
+            font-family: 'Poppins', arial;
+            color: #747270;
+            font-weight: 600;
+            font-size: 18px; /* Reducido el tamaño de la fuente */
+            margin-left: 10px; /* Espacio entre el logo y el texto */
+        }
+        .header button {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            /* Eliminar contenido de este contenedor */
+        }
+        .highlight {
+            color: #217bf0;
+        }
+        p {
+            color: #000000;
+        }
+        .cta {
+            color: #ff5722;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="static/UCatolicaLuisAmigo.png" alt="Universidad Católica Luis Amigó">
+        <div class="center">
+            <h1>solicitud de prestamos de implementos</h1>
+        </div>
+        <!-- Cargar la API de Google -->
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<!-- Botón de Google Sign-In -->
+<div <div id="g_id_onload"
+data-client_id="83711085831-jj3v6f2ku7iuf9ja9g56mgm7ha4do56r.apps.googleusercontent.com"
+data-context="signin"
+data-ux_mode="popup"
+data-callback="handleCredentialResponse"
+data-auto_select="false">
+</div>
+
+<div class="g_id_signin"
+data-type="standard"
+data-shape="rectangular"
+data-theme="outline"
+data-text="signin_with"
+data-size="large">
+</div>
+
+<script>
+function handleCredentialResponse(response) {
+   const responsePayload = parseJwt(response.credential);
+   const email = responsePayload.email;
+
+   if (email.endsWith("@amigo.edu.co")) {
+       alert("✅ Acceso aprobado: " + email);
+   } else {
+       alert("❌ Acceso denegado: Debes usar un correo @amigo.edu.co");
+   }
+}
+
+function parseJwt(token) {
+   let base64Url = token.split('.')[1];
+   let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+   let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
+       return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+   }).join(''));
+   return JSON.parse(jsonPayload);
+}
+</script>
+
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="5000">
+                <div class="container">
+                    <img src="static/BIENVENIDOS.jpg" alt="Descripción de la imagen" style="width: 100%; height: auto;">
+                </div>
+            </div>
+            <div class="carousel-item" data-bs-interval="5000">
+                <div class="container">
+                    <img src="static/salida.jpg" class="d-block w-100" alt="nada" style="width: 100%; height: auto;">
+                </div>
+            </div>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
+    </div>
+    
+    
+
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
