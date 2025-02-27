@@ -7,99 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Solicitud de Préstamos de Implementos</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap" rel="stylesheet">
-    
-    <style>
-       
-       .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            filter: invert(50%);
-        }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="scrip.js">
+     <link rel="stylesheet" href="style.css">
+     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
 
-        .fade-in {
-            opacity: 0;
-            transform: translateY(-20px);
-            animation: fadeIn 1s ease-in-out forwards;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f8f9fa;
-            text-align: center;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            background: white;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
-
-        .header img {
-            height: 80px;
-            width: auto;
-        }
-
-        .center {
-            display: flex;
-            justify-content: center;
-            flex-grow: 1;
-        }
-
-        .center h1 {
-            font-family: 'Poppins', Arial;
-            color: #747270;
-            font-weight: 600;
-            font-size: 18px;
-        }
-
-        .g_id_signin {
-            cursor: pointer;
-            transition: transform 0.3s ease, background-color 0.3s ease;
-        }
-
-        .click-effect {
-            animation: clickPulse 0.5s ease-in-out;
-        }
-
-        @keyframes clickPulse {
-            0% {
-                transform: scale(1);
-                background-color: #e9ecef;
-            }
-            50% {
-                transform: scale(1.05);
-                background-color: #d0e3ff;
-            }
-            100% {
-                transform: scale(1);
-                background-color: white;
-            }
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 50px auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-    </style>
+   
 </head>
 
 <body class="fade-in">
@@ -134,12 +49,12 @@
         <div class="carousel-inner">
             <div class="carousel-item active" data-bs-interval="5000">
                 <div class="container">
-                    <img src="static/BIENVENIDOS.jpg" alt="Bienvenidos" style="width: 100%; height: auto;">
+                    <img src="static/2.jpg" alt="Bienvenidos" style="width: 100%; height: auto;">
                 </div>
             </div>
             <div class="carousel-item" data-bs-interval="5000">
                 <div class="container">
-                    <img src="static/salida.jpg" class="d-block w-100" alt="Salida" style="width: 100%; height: auto;">
+                    <img src="static/1.jpg" class="d-block w-100" alt="Salida" style="width: 100%; height: auto;">
                 </div>
             </div>
         </div>
@@ -155,39 +70,13 @@
 
     <script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <script>
-        function handleCredentialResponse(response) {
-            const responsePayload = parseJwt(response.credential);
-            const email = responsePayload.email;
 
-            if (email.endsWith("@amigo.edu.co")) {
-                alert("✅ Acceso aprobado: " + email);
-            } else {
-                alert("❌ Acceso denegado: Debes usar un correo @amigo.edu.co");
-            }
-        }
 
-        function parseJwt(token) {
-            let base64Url = token.split('.')[1];
-            let base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-            let jsonPayload = decodeURIComponent(atob(base64).split('').map(function(c) {
-                return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
-            }).join(''));
-            return JSON.parse(jsonPayload);
-        }
+    <footer>
 
-        document.addEventListener("DOMContentLoaded", function() {
-            const emailField = document.querySelector(".g_id_signin");
-
-            emailField.addEventListener("click", function() {
-                emailField.classList.add("click-effect");
-
-                setTimeout(() => {
-                    emailField.classList.remove("click-effect");
-                }, 500);
-            });
-        });
-    </script>
+        <p>Universidad Católica Luis Amigó © 2025</p>
+    </footer>
+    
 
 </body>
 </html>
