@@ -1,0 +1,125 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6e6d8; /* Beige claro */
+  font-family: 'Calibri', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+  position: relative;
+}
+
+/* Logo en la esquina */
+.logo {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 80px;
+  opacity: 0.8;
+}
+
+/* Estilo del formulario */
+.form-register {
+  width: 100%;
+  max-width: 450px;
+  background: linear-gradient(160deg, #d97a40, #c46a34);
+  padding: 30px;
+  border-radius: 12px;
+  color: white;
+  box-shadow: 6px 10px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.form-register h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Inputs y Select */
+.controls {
+  width: 100%;
+  background: #c16b3a;
+  padding: 12px;
+  border-radius: 6px;
+  margin-bottom: 16px;
+  border: 1px solid #a25729;
+  font-size: 16px;
+  color: white;
+  appearance: none; /* Elimina el estilo nativo del select */
+}
+
+.controls:focus {
+  border-color: #8a4421;
+  outline: none;
+}
+
+.controls::placeholder {
+  color: #f0d2b5;
+}
+
+/* Términos y condiciones */
+.form-register p {
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.form-register a {
+  color: #ffe8d6;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.form-register a:hover {
+  text-decoration: underline;
+}
+
+/* Botón */
+.botons {
+  width: 100%;
+  background: #a25729;
+  border: none;
+  padding: 14px;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.botons:hover {
+  background: #873e1d;
+}
+
+/* RESPONSIVE: Ajustes para dispositivos móviles */
+@media (max-width: 480px) {
+  .form-register {
+    padding: 20px;
+  }
+
+  .form-register h4 {
+    font-size: 18px;
+  }
+
+  .controls {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  .botons {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .logo {
+    width: 60px; /* Reduce el tamaño del logo en pantallas pequeñas */
+  }
+}
